@@ -139,6 +139,6 @@ func swimmingMeanSpeed(lengthPool, countPool int, duration float64) float64 {
 func SwimmingSpentCalories(lengthPool, countPool int, duration, weight float64) float64 {
 	var calories, avarageSwimSpeed float64
 	avarageSwimSpeed = swimmingMeanSpeed(lengthPool, countPool, duration)
-	calories = (avarageSwimSpeed + 1.1) * 2 * weight * duration
+	calories = (avarageSwimSpeed + swimmingCaloriesMeanSpeedShift) * swimmingCaloriesWeightMultiplier * weight * duration
 	return calories
 }
